@@ -3,45 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Tienda Virtual</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Tienda Virtual</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Encabezado -->
     <header>
         <h1>Mi Tienda Virtual</h1>
-        <div class="cart">
-            🛒 Carrito (<span id="cart-count">0</span>)
-        </div>
+        <nav>
+            <a href="#">Inicio</a>
+            <a href="#">Productos</a>
+            <a href="#">Contacto</a>
+        </nav>
     </header>
 
-    <main>
-        <section class="products">
-            <div class="product">
-                <img src="img/jogger.jpg" alt="Producto 1">
-                <h2>Producto 1</h2>
-                <p class="price">$10</p>
-                <button onclick="addToCart('Producto 1', 10)">Agregar al carrito</button>
-            </div>
-            <div class="product">
-                <img src="img/Polera Overzice.jpg" alt="Producto 2">
-                <h2>Producto 2</h2>
-                <p class="price">$15</p>
-                <button onclick="addToCart('Producto 2', 15)">Agregar al carrito</button>
-            </div>
-            <div class="product">
-                <img src="img/polo.jpg" alt="Producto 3">
-                <h2>Producto 3</h2>
-                <p class="price">$20</p>
-                <button onclick="addToCart('Producto 3', 20)">Agregar al carrito</button>
-            </div>
-        </section>
+    <!-- Contenedor de productos -->
+    <main class="contenedor">
+        <div class="producto">
+            <img src="img/jogger.jpg" alt="Producto 1">
+            <h2>Producto 1</h2>
+            <p class="precio">$20.00</p>
+            <button onclick="agregarCarrito('Producto 1', 20)">Agregar al carrito</button>
+        </div>
 
-        <section class="cart-details" id="cart-details">
-            <h2>Carrito de Compras</h2>
-            <ul id="cart-items"></ul>
-            <p>Total: $<span id="total-price">0</span></p>
-        </section>
+        <div class="producto">
+            <img src="img/Polera Overzice.jpg" alt="Producto 2">
+            <h2>Producto 2</h2>
+            <p class="precio">$35.00</p>
+            <button onclick="agregarCarrito('Producto 2', 35)">Agregar al carrito</button>
+        </div>
+
+        <div class="producto">
+            <img src="img/polo.jpg" alt="Producto 3">
+            <h2>Producto 3</h2>
+            <p class="precio">$50.00</p>
+            <button onclick="agregarCarrito('Producto 3', 50)">Agregar al carrito</button>
+        </div>
+        <div class="producto">
+            <img src="img/casaca.jpg" alt="Producto 3">
+            <h2>Producto 3</h2>
+            <p class="precio">$50.00</p>
+            <button onclick="agregarCarrito('Producto 3', 50)">Agregar al carrito</button>
+        </div>
     </main>
+
+    <!-- Carrito -->
+    <section class="carrito">
+        <h2>Carrito de Compras</h2>
+        <ul id="lista-carrito"></ul>
+        <p>Total: $<span id="total">0</span></p>
+        <button id="vaciar-carrito">Vaciar carrito</button>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2025 Mi Tienda Virtual - Todos los derechos reservados</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>

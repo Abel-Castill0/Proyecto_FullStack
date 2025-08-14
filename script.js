@@ -1,22 +1,25 @@
-let cart = [];
+let carrito = [];
 let total = 0;
 
-function addToCart(name, price) {
-    cart.push({ name, price });
-    total += price;
-    updateCart();
+function agregarCarrito(nombre, precio) {
+    carrito.push({ nombre, precio });
+    total += precio;
+    actualizarCarrito();
 }
 
-function updateCart() {
-    document.getElementById("cart-count").textContent = cart.length;
-
-    let cartItems = document.getElementById("cart-items");
-    cartItems.innerHTML = "";
-    cart.forEach(item => {
-        let li = document.createElement("li");
-        li.textContent = `${item.name} - $${item.price}`;
-        cartItems.appendChild(li);
+function actualizarCarrito() {
+    const listaCarrito = document.getElementById('lista-carrito');
+    listaCarrito.innerHTML = '';
+    carrito.forEach(producto => {
+        const li = document.createElement('li');
+        li.textContent = `${producto.nombre} - $${producto.precio}`;
+        listaCarrito.appendChild(li);
     });
-
-    document.getElementById("total-price").textContent = total;
+    document.getElementById('total').textContent = total.toFixed(2);
 }
+
+document.getElementById('vaciar-carrito').addEventListener('click', () => {
+    carrito = [];
+    total = 0;
+    actualizarCarrito();
+});
